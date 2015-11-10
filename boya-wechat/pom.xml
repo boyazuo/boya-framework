@@ -6,10 +6,10 @@
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../boya-parent/pom.xml</relativePath>
 	</parent>
-	<artifactId>boya-core</artifactId>
+	<artifactId>boya-wechat</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Boya Framework Model Core</name>
+	<name>Boya Framework Model WeChat</name>
 
 	<dependencies>
 		<!-- spring -->
