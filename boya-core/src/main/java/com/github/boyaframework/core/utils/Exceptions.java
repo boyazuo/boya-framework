@@ -8,6 +8,7 @@ import java.io.StringWriter;
  * 
  * 参考了guava的Throwables。
  * 
+ * @author calvin
  */
 public class Exceptions {
 

@@ -15,6 +15,7 @@ import com.google.common.collect.Lists;
  * 3. 批量转换Collection中的所有对象.
  * 4. 区分创建新的B对象与将对象A值复制到已存在的B对象两种函数.
  * 
+ * @author calvin
  */
 public class BeanMapper {
 

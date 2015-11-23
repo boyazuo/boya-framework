@@ -13,6 +13,7 @@ import com.github.boyaframework.core.utils.Exceptions;
  * 
  * 返回String，统一编码为Hex
  * 
+ * @author calvin
  */
 public class Digests {
 
