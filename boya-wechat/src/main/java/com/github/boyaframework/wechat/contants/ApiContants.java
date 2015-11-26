@@ -122,13 +122,13 @@ public class ApiContants {
 	 */
 	public static String getUserInfoUrl(String accessToken, String openId) {
 		String url = USER_INFO_API.replace("{{ACCESS_TOKEN}}", accessToken);
-		url = USER_INFO_API.replace("{{OPENID}}", openId);
+		url = url.replace("{{OPENID}}", openId);
 		return url;
 	}
 	
 	
 	
 	public static void main(String[] args) {
-		System.out.println(getAccessTokenUrl("123"));
+		System.out.println(getUserInfoUrl("OezXcEiiBSKSxW0eoylIeP0i103D4eoEDUkFv75zt1epAnLyR67l-rZnkMhKigVr9AzNPObVz3FU2C_cfCmW1JWf754PIcZSEeYwJcF8MKA53QvAXwhYA0eHbx6u5IDOpLOsto3MV7OZgX8hxdH5FQ", "123"));
 	}
 }
