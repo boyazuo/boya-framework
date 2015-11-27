@@ -16,6 +16,14 @@ public class ApiContants {
 	 * @Fields SNSAPI_USERINFO :  
 	 */ 
 	public static final String SNSAPI_USERINFO = "snsapi_userinfo";
+	
+	/** 
+	 * @Fields WX_ACCESS_TOKEN_API : 获取公众号的access_token 
+	 */ 
+	public static final String WX_ACCESS_TOKEN_API = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="
+			+ "{{APPID}}"
+			+ "&secret="
+			+ "{{APPSECRET}}";
 
 	/** 
 	 * @Fields AUTHORIZE : 获取授权接口 
@@ -123,6 +131,18 @@ public class ApiContants {
 	public static String getUserInfoUrl(String accessToken, String openId) {
 		String url = USER_INFO_API.replace("{{ACCESS_TOKEN}}", accessToken);
 		url = url.replace("{{OPENID}}", openId);
+		return url;
+	}
+	
+	/** 
+	 * @Title: getWxAccessToken 
+	 * @Description: 得到获取微信号access_token的接口 
+	 * @return String    返回类型 
+	 * @throws 
+	 */
+	public static String getWxAccessToken() {
+		String url = WX_ACCESS_TOKEN_API.replace("{{APPID}}", BaseContants.APPID);
+		url = url.replace("{{APPSECRET}}", BaseContants.APPSECRET);
 		return url;
 	}
 	
