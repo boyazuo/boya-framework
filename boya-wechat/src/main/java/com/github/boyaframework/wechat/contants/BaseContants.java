@@ -13,4 +13,8 @@ public class BaseContants {
 	 * @Fields ACCESS_TOKEN_MAP : 缓存access_token
 	 */ 
 	public static final Map<String, Long> ACCESS_TOKEN_MAP = new HashMap<String, Long>();
+	/** 
+	 * @Fields ACCESS_TOKEN_MAP : 缓存 js ticket 
+	 */ 
+	public static final Map<String, Long> JSAPI_TICKET_MAP = new HashMap<String, Long>();
 }

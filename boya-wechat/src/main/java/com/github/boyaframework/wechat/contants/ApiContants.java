@@ -147,6 +147,20 @@ public class ApiContants {
 	}
 	
 	
+	public static final String JSAPI_TICKET_API = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token={{ACCESS_TOKEN}}&type=jsapi";
+	
+	/** 
+	 * @Title: getJsapiTicketUrl 
+	 * @Description: 通过微信access_token 得到 js sdk ticket 
+	 * @param accessToken
+	 * @return String    返回类型 
+	 * @throws 
+	 */
+	public static String getJsapiTicketUrl(String accessToken) {
+		String url = JSAPI_TICKET_API.replace("{{ACCESS_TOKEN}}", accessToken);
+		return url;
+	}
+	
 	
 	public static void main(String[] args) {
 		System.out.println(getUserInfoUrl("OezXcEiiBSKSxW0eoylIeP0i103D4eoEDUkFv75zt1epAnLyR67l-rZnkMhKigVr9AzNPObVz3FU2C_cfCmW1JWf754PIcZSEeYwJcF8MKA53QvAXwhYA0eHbx6u5IDOpLOsto3MV7OZgX8hxdH5FQ", "123"));
