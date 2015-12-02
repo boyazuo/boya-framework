@@ -161,6 +161,22 @@ public class ApiContants {
 		return url;
 	}
 	
+	public static final String DOWNLOAD_MEDIA_API = "http://file.api.weixin.qq.com/cgi-bin/media/get?access_token={{ACCESS_TOKEN}}&media_id={{MEDIA_ID}}";
+
+	/** 
+	 * @Title: getDownloadMediaUrl 
+	 * @Description: 得到下载多媒体文件的接口 
+	 * @param accessToken
+	 * @param mediaId
+	 * @return String    返回类型 
+	 * @throws 
+	 */
+	public static String getDownloadMediaUrl(String accessToken, String mediaId) {
+		String url = DOWNLOAD_MEDIA_API.replace("{{ACCESS_TOKEN}}", accessToken);
+		url = url.replace("{{MEDIA_ID}}", mediaId);
+		return url;
+		
+	}
 	
 	public static void main(String[] args) {
 		System.out.println(getUserInfoUrl("OezXcEiiBSKSxW0eoylIeP0i103D4eoEDUkFv75zt1epAnLyR67l-rZnkMhKigVr9AzNPObVz3FU2C_cfCmW1JWf754PIcZSEeYwJcF8MKA53QvAXwhYA0eHbx6u5IDOpLOsto3MV7OZgX8hxdH5FQ", "123"));

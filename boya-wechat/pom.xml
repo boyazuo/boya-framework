@@ -12,6 +12,17 @@
 	<name>Boya Framework Model WeChat</name>
 
 	<dependencies>
+		<!-- gosn -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.4</version>  
+		</dependency>
+		<!-- httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
 		<!-- spring -->
 		<!-- 纯粹为了exclude commons-loging -->
 		<dependency>
