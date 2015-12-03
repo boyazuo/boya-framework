@@ -81,22 +81,29 @@ public class WxMediaService {
 			conn = (HttpURLConnection) url.openConnection();
 			conn.setDoInput(true);
 			conn.setRequestMethod("GET");
-			String exe = WxMediaUtils.getExe(conn.getContentType());
-			data.put("exe", exe);
-			data.put("newName", newName + exe);
-			File file = new File(filePath);
-			//不存在创建文件夹
-			if(!file.exists()){
-				file.mkdirs();
-			}
-			file = new File(filePath + File.separator + newName + exe);
-			fos = new FileOutputStream(file);
-			bis = new BufferedInputStream(conn.getInputStream());
-			byte[] buf = new byte[8096];
-			int size = 0;
-			while ((size = bis.read(buf)) != -1) {
-				// 将媒体文件写到输出流（往微信服务器写数据）
-				fos.write(buf, 0, size);
+			int state = conn.getResponseCode();
+			if(state == 200) {
+				String exe = WxMediaUtils.getExe(conn.getContentType());
+				logger.info(conn.getContentType());
+				data.put("exe", exe);
+				data.put("newName", newName + exe);
+				File file = new File(filePath);
+				//不存在创建文件夹
+				if(!file.exists()){
+					file.mkdirs();
+				}
+				file = new File(filePath + File.separator + newName + exe);
+				fos = new FileOutputStream(file);
+				bis = new BufferedInputStream(conn.getInputStream());
+				byte[] buf = new byte[8096];
+				int size = 0;
+				while ((size = bis.read(buf)) != -1) {
+					// 将媒体文件写到输出流（往微信服务器写数据）
+					fos.write(buf, 0, size);
+				}
+				data.put("code", "1");
+			} else {
+				data.put("code", "0");
 			}
 		} catch (MalformedURLException e) {
 			logger.error("", e);
