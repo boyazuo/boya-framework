@@ -37,7 +37,7 @@ public class WxMediaService {
 	 * @param savePath
 	 *            文件在服务器上的存储路径
 	 * */
-	public static HttpURLConnection downloadMedia(String accessToken,
+	public HttpURLConnection downloadMedia(String accessToken,
 			String mediaId) {
 		// 拼接请求地址
 		String apiurl = ApiContants.getDownloadMediaUrl(accessToken, mediaId);
@@ -66,7 +66,7 @@ public class WxMediaService {
 	 * @return HttpURLConnection    返回类型 
 	 * @throws 
 	 */
-	public static Map<String, Object> downloadMedia2Path(String accessToken,
+	public Map<String, Object> downloadMedia2Path(String accessToken,
 			String mediaId, String filePath, String newName) {
 		Map<String, Object> data = new HashMap<String, Object>();
 		// 拼接请求地址
@@ -120,8 +120,5 @@ public class WxMediaService {
 	}
 
 	public static void main(String[] args) throws IOException {
-		downloadMedia2Path(
-				"GsBzvA1qTa-UCvB8hnqEsOe1AjH-cWjHoERgQ1oU_Nk_I1XmWKrVDtBahthuEPDpzCNVa0nw4iIdJ54yIWUyk7fg-xoRMpHKcccR5BtuWVkXIWfAIAEPD",
-				"0UIls6N93oYxKiKyiLkAGUEw_RHqRBdJHQZo0znrGc75FNB89nDOL9pcYRiUiyhq","d:/", "eee");
 	}
 }
