@@ -83,7 +83,7 @@ public class WxMediaService {
 			conn.setRequestMethod("GET");
 			String exe = WxMediaUtils.getExe(conn.getContentType());
 			data.put("exe", exe);
-			
+			data.put("newName", newName + exe);
 			File file = new File(filePath);
 			//不存在创建文件夹
 			if(!file.exists()){
