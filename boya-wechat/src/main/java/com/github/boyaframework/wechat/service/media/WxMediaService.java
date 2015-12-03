@@ -122,6 +122,6 @@ public class WxMediaService {
 	public static void main(String[] args) throws IOException {
 		downloadMedia2Path(
 				"GsBzvA1qTa-UCvB8hnqEsOe1AjH-cWjHoERgQ1oU_Nk_I1XmWKrVDtBahthuEPDpzCNVa0nw4iIdJ54yIWUyk7fg-xoRMpHKcccR5BtuWVkXIWfAIAEPD",
-				"0UIls6N93oYxKiKyiLkAGUEw_RHqRBdJHQZo0znrGc75FNB89nDOL9pcYRiUiyhq","d:/", "eee");
+				"0UIls6N93oYxKiKyiLkAGUEw_RHqRBdJHQZo0znrGc75FNB89nDOL9pcYRiUiyhq","d:/", "123");
 	}
 }
