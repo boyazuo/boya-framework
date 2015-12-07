@@ -175,8 +175,14 @@ public class ApiContants {
 		String url = DOWNLOAD_MEDIA_API.replace("{{ACCESS_TOKEN}}", accessToken);
 		url = url.replace("{{MEDIA_ID}}", mediaId);
 		return url;
-		
 	}
+	
+	/** 
+	 * @Fields PLACE_AN_ORDER : 微信统一下单 
+	 */ 
+	public static final String PLACE_AN_ORDER = "https://api.mch.weixin.qq.com/pay/unifiedorder";
+	
+	
 	
 	public static void main(String[] args) {
 		System.out.println(getUserInfoUrl("OezXcEiiBSKSxW0eoylIeP0i103D4eoEDUkFv75zt1epAnLyR67l-rZnkMhKigVr9AzNPObVz3FU2C_cfCmW1JWf754PIcZSEeYwJcF8MKA53QvAXwhYA0eHbx6u5IDOpLOsto3MV7OZgX8hxdH5FQ", "123"));

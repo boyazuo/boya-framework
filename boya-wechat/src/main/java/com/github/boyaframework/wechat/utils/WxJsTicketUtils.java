@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import org.apache.log4j.Logger;
 
@@ -66,8 +65,8 @@ public class WxJsTicketUtils {
 
 	public static Map<String, String> sign(String jsapi_ticket, String url) {
 		Map<String, String> ret = new HashMap<String, String>();
-		String nonce_str = create_nonce_str();
-		String timestamp = create_timestamp();
+		String nonce_str = SignUtils.create_nonce_str();
+		String timestamp = SignUtils.create_timestamp();
 		String string1;
 		String signature = "";
 		// 注意这里参数名必须全部小写，且必须有序
@@ -91,6 +90,45 @@ public class WxJsTicketUtils {
 		ret.put("signature", signature);
 		return ret;
 	}
+	
+	/** 
+	 * @Title: paySign 
+	 * @Description: 微信JS-SDK的签名生成 
+	 * @param pk
+	 * @return Map<String,String>    返回类型 
+	 * @throws 
+	 */
+	public static Map<String, String> paySign(String pk) {
+		Map<String, String> ret = new HashMap<String, String>();
+		String appid = BaseContants.APPID;
+		String signType = "MD5";
+		String nonceStr = SignUtils.create_nonce_str();
+		String timestamp = SignUtils.create_timestamp();
+		String signature = "";
+		// 注意这里参数名必须全部小写，且必须有序
+		String stringA = "appId=" + appid + "&nonceStr=" + nonceStr + "&package=" + pk + "&signType=" + signType +"&timeStamp=" + timestamp;
+		logger.info(stringA);
+		//拼接API密钥
+		String stringSignTemp = stringA + "&key=" + BaseContants.PAY_KEY;
+		try {
+			MessageDigest crypt = MessageDigest.getInstance("MD5");
+			crypt.reset();
+			crypt.update(stringSignTemp.getBytes("UTF-8"));
+			signature = byteToHex(crypt.digest());
+		} catch (NoSuchAlgorithmException e) {
+			logger.error("error", e);
+		} catch (UnsupportedEncodingException e) {
+			logger.error("error", e);
+		}
+		ret.put("appId", appid);
+		ret.put("timeStamp", timestamp);
+		ret.put("nonceStr", nonceStr);
+		ret.put("package", pk);
+		//签名算法只支持MD5
+		ret.put("signType", "MD5");
+		ret.put("paySign", signature.toUpperCase());
+		return ret;
+	}
 
 	private static String byteToHex(final byte[] hash) {
 		Formatter formatter = new Formatter();
@@ -100,11 +138,5 @@ public class WxJsTicketUtils {
 		String result = formatter.toString();
 		formatter.close();
 		return result;
-	}
-	private static String create_nonce_str() {
-		return UUID.randomUUID().toString();
-	}
-	private static String create_timestamp() {
-		return Long.toString(System.currentTimeMillis() / 1000);
 	}
 }

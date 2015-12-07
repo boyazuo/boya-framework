@@ -1,5 +1,12 @@
 package com.github.boyaframework.wechat.utils;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +21,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 
 
 
@@ -25,6 +33,7 @@ import org.apache.http.util.EntityUtils;
  * 
  */
 public class HttpUtils {
+	static Logger logger = Logger.getLogger(HttpUtils.class);
 	/**
 	 * @Fields ENCODING : 编码格式。发送编码格式统一用UTF-8
 	 */
@@ -75,7 +84,7 @@ public class HttpUtils {
 			response = client.execute(method);
 			HttpEntity entity = response.getEntity();
 			if (entity != null) {
-				responseText = EntityUtils.toString(entity);
+				responseText = EntityUtils.toString(entity, ENCODING);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -88,6 +97,36 @@ public class HttpUtils {
 		}
 		return responseText;
 	}
+	
+	public static String postXml(String urlStr, Map<String, Object> paramsMap) {  
+		String result = "";  
+        try {  
+            URL url = new URL(urlStr);  
+            URLConnection con = url.openConnection();  
+            con.setDoOutput(true);  
+            con.setRequestProperty("Pragma:", "no-cache");  
+            con.setRequestProperty("Cache-Control", "no-cache");  
+            con.setRequestProperty("Content-Type", "text/xml");  
+            OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());      
+            String xmlInfo = XmlUtils.map2xmlBody(paramsMap, "xml");
+            logger.info("urlStr=" + urlStr);  
+            logger.info("xmlInfo=" + xmlInfo);  
+            out.write(new String(xmlInfo.getBytes(ENCODING)));  
+            out.flush();  
+            out.close();  
+            BufferedReader br = new BufferedReader(new InputStreamReader(con  
+                    .getInputStream()));
+            String line = "";
+            for (line = br.readLine(); line != null; line = br.readLine()) {  
+            	result += line;
+            }  
+        } catch (MalformedURLException e) {
+        	logger.error("", e);
+        } catch (IOException e) {  
+        	logger.error("", e);
+        }  
+        return result;
+    } 
 	
 	public static void main(String[] args) {
 		String str = get("https://api.weixin.qq.com/sns/oauth2/access_token?appid=123&secret=132&code=123&grant_type=authorization_code");
