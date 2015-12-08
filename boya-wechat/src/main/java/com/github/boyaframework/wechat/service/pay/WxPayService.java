@@ -5,28 +5,32 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.dom4j.DocumentException;
+import org.springframework.stereotype.Component;
 
 import com.github.boyaframework.wechat.contants.ApiContants;
 import com.github.boyaframework.wechat.contants.BaseContants;
+import com.github.boyaframework.wechat.exception.PayException;
 import com.github.boyaframework.wechat.utils.HttpUtils;
 import com.github.boyaframework.wechat.utils.SignUtils;
 import com.github.boyaframework.wechat.utils.XmlUtils;
 
+@Component
 public class WxPayService {
 	static Logger logger = Logger.getLogger(WxPayService.class);
-	/** 
+	/**
+	 * @throws PayException  
 	 * @Title: placeAnOrder 
 	 * @Description: 生成一个微信订单 
 	 * @param body 商品描述
 	 * @param orderNum  订单号
 	 * @param totalMoney 总价
 	 * @param ip ip地址
-	 * @param notifyUrl 回调地址
+	 * @param notifyUrl 回调地址（暂时感觉没什么用）
 	 * @param openid oppenId（公众号支付时，必须有此参数）
 	 * @return Map<String,Object>    返回类型 
-	 * @throws 
+	 * @throws PayException
 	 */
-	public static Map<String,Object> placeAnOrder(String body, String orderNum, Integer totalMoney, String ip, String notifyUrl, String openid){
+	public Map<String,Object> placeAnOrder(String body, String orderNum, Integer totalMoney, String ip, String notifyUrl, String openid) throws PayException{
 		Map<String, Object> param = new HashMap<String, Object>();
 		//公众号ID
 		param.put("appid", BaseContants.APPID);
@@ -62,22 +66,17 @@ public class WxPayService {
 		//放入参数
 		param.put("sign", stringSignTemp);
 		
-		String result = HttpUtils.postXml(ApiContants.PLACE_AN_ORDER, param);
-		logger.info(result);
 		Map<String, Object> resultData = new HashMap<String, Object>();
 		try {
+			String result = HttpUtils.postXml(ApiContants.PLACE_AN_ORDER, param);
+			logger.info(result);
 			resultData = XmlUtils.xmlBody2map(result,"xml");
 		} catch (DocumentException e) {
 			logger.error("error", e);
+			throw new PayException(e.getMessage());
 		}
 		return resultData;
 	}
 	
 	
-	public static void main(String[] args) {
-		Map<String,Object> resultData = placeAnOrder("什么都不是", "20150806125346", 1, "123.12.12.123", "http://www.weixin.qq", "oivJ3wIr29Ob5U7-hjZqKlB7TxAQ");
-		for (String key : resultData.keySet()) {
-			System.out.println(key + "====" + resultData.get(key));
-		}
-	}
 }

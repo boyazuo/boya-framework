@@ -23,6 +23,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 
+import com.github.boyaframework.wechat.exception.PayException;
+
 
 
 /**
@@ -98,7 +100,7 @@ public class HttpUtils {
 		return responseText;
 	}
 	
-	public static String postXml(String urlStr, Map<String, Object> paramsMap) {  
+	public static String postXml(String urlStr, Map<String, Object> paramsMap) throws PayException {  
 		String result = "";  
         try {  
             URL url = new URL(urlStr);  
@@ -121,9 +123,11 @@ public class HttpUtils {
             	result += line;
             }  
         } catch (MalformedURLException e) {
-        	logger.error("", e);
+        	logger.error("不正确的URL", e);
+        	throw new PayException("不正确的URL");
         } catch (IOException e) {  
-        	logger.error("", e);
+        	logger.error("IO错误", e);
+        	throw new PayException("IO错误");
         }  
         return result;
     } 
