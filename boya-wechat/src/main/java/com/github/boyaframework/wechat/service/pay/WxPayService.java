@@ -23,7 +23,7 @@ public class WxPayService {
 	 * @Description: 生成一个微信订单 
 	 * @param body 商品描述
 	 * @param orderNum  订单号
-	 * @param totalMoney 总价
+	 * @param totalMoney 总价（单位 分）
 	 * @param ip ip地址
 	 * @param notifyUrl 回调地址（暂时感觉没什么用）
 	 * @param openid oppenId（公众号支付时，必须有此参数）
