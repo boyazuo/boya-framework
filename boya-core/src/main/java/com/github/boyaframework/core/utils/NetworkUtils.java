@@ -72,6 +72,10 @@ public final class NetworkUtils {
 				}
 			}
 		}
+		logger.info(ip);
+		if("0:0:0:0:0:0:0:1".equals(ip)){
+			return "127.0.0.1";
+		}
 		return ip;
 	}
 }

@@ -12,6 +12,10 @@
 	<name>Boya Framework Model WeChat</name>
 
 	<dependencies>
+	<dependency>
+		<groupId>jaxen</groupId>
+		<artifactId>jaxen</artifactId>
+	</dependency>
 		<!-- gosn -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
