@@ -21,7 +21,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.github.boyaframework.wechat.exception.PayException;
 
@@ -35,7 +36,7 @@ import com.github.boyaframework.wechat.exception.PayException;
  * 
  */
 public class HttpUtils {
-	static Logger logger = Logger.getLogger(HttpUtils.class);
+	static Logger logger = LoggerFactory.getLogger(HttpUtils.class);
 	/**
 	 * @Fields ENCODING : 编码格式。发送编码格式统一用UTF-8
 	 */

@@ -13,7 +13,8 @@ import java.util.Map;
 import java.util.UUID;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** 
  * @ClassName: SignUtils 
@@ -23,7 +24,7 @@ import org.apache.log4j.Logger;
  *  
  */
 public class SignUtils {
-	static Logger logger = Logger.getLogger(SignUtils.class);
+	static Logger logger = LoggerFactory.getLogger(SignUtils.class);
 	
 	/** 
 	 * @Title: createKeyValue 

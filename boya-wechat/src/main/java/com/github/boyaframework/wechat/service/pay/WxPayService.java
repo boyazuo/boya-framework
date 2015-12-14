@@ -3,9 +3,10 @@ package com.github.boyaframework.wechat.service.pay;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
 import org.dom4j.DocumentException;
-import org.springframework.stereotype.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import com.github.boyaframework.wechat.contants.ApiContants;
 import com.github.boyaframework.wechat.contants.BaseContants;
@@ -14,9 +15,9 @@ import com.github.boyaframework.wechat.utils.HttpUtils;
 import com.github.boyaframework.wechat.utils.SignUtils;
 import com.github.boyaframework.wechat.utils.XmlUtils;
 
-@Component
+@Service
 public class WxPayService {
-	static Logger logger = Logger.getLogger(WxPayService.class);
+	static Logger logger = LoggerFactory.getLogger(WxPayService.class);
 	/**
 	 * @throws PayException  
 	 * @Title: placeAnOrder 

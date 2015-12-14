@@ -8,7 +8,8 @@ import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.github.boyaframework.wechat.contants.ApiContants;
 import com.github.boyaframework.wechat.contants.BaseContants;
@@ -22,7 +23,7 @@ import com.google.gson.Gson;
  *  
  */
 public class WxJsTicketUtils {
-	private static Logger logger = Logger.getLogger(WxJsTicketUtils.class);
+	private static Logger logger = LoggerFactory.getLogger(WxJsTicketUtils.class);
 	public static Integer TIME_OUT = 60 * 1000 * 60;
 	/**
 	 * @Title: getJsapiTicket

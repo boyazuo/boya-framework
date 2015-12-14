@@ -10,8 +10,9 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-import org.springframework.stereotype.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import com.github.boyaframework.wechat.contants.ApiContants;
 import com.github.boyaframework.wechat.utils.WxMediaUtils;
@@ -23,9 +24,9 @@ import com.github.boyaframework.wechat.utils.WxMediaUtils;
  * @date 2015年12月1日 下午3:59:47
  * 
  */
-@Component
+@Service
 public class WxMediaService {
-	static Logger logger = Logger.getLogger(WxMediaService.class);
+	static Logger logger = LoggerFactory.getLogger(WxMediaService.class);
 
 	/**
 	 * 获取媒体文件
