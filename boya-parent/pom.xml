@@ -17,39 +17,25 @@
 	<properties>
 		<!-- 主要依赖库的版本定义 -->
 		<boya.version>1.0.0-SNAPSHOT</boya.version>
-
-		<mybatis.version>3.2.7</mybatis.version>
-
+		<mybatis.starter.version>1.0.0</mybatis.starter.version>
 		<activiti.version>5.16</activiti.version>
 		<sitemesh.version>2.4.2</sitemesh.version>
 		<shiro.version>1.2.3</shiro.version>
-		<cxf.version>2.7.11</cxf.version>
-		<activemq.version>5.7.0</activemq.version>
 		<quartz.version>2.2.1</quartz.version>
 		<jedis.version>2.7.3</jedis.version>
 		<ehcache.version>2.6.9</ehcache.version>
 		<spymemcached.version>2.11.5</spymemcached.version>
-		<hibernate-validator.version>5.0.3.Final</hibernate-validator.version>
 		<jolokia.version>1.2.3</jolokia.version>
 		<hystrix.version>1.3.16</hystrix.version>
 		<javasimon.version>3.5.2</javasimon.version>
-		<jackson.version>2.4.4</jackson.version>
 		<httpclient.version>4.3.6</httpclient.version>
 		<commons-lang3.version>3.3.2</commons-lang3.version>
 		<commons-io.version>2.4</commons-io.version>
 		<guava.version>18.0</guava.version>
 		<joda-time.version>2.3</joda-time.version>
 		<dozer.version>5.5.1</dozer.version>
-		<freemarker.version>2.3.21</freemarker.version>
-		<aspectj.version>1.8.4</aspectj.version>
-		<junit.version>4.11</junit.version>
-		<assertj.version>1.7.0</assertj.version>
-		<mockito.version>1.10.8</mockito.version>
-		<powermock.version>1.6.0</powermock.version>
-		<selenium.version>2.42.2</selenium.version>
 		<nosqlunit.version>0.8.0</nosqlunit.version>
 		<jetty.version>8.1.16.v20140903</jetty.version>
-		<h2.version>1.3.176</h2.version>
 		<solr.version>4.10.4</solr.version>
 
 		<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
@@ -79,6 +65,11 @@
 			</dependency>
 			<!-- boyaframework end -->
 
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatis.starter.version}</version>
+			</dependency>
 			<!-- mybatis 分页插件 -->
 			<dependency>
 				<groupId>com.github.pagehelper</groupId>
@@ -175,7 +166,7 @@
 				<version>${shiro.version}</version>
 			</dependency>
 			<!-- SECURITY end -->
-			
+
 			<!-- optional datasource pool -->
 			<dependency>
 				<groupId>commons-dbcp</groupId>
@@ -188,7 +179,7 @@
 				<version>1.6</version>
 			</dependency>
 			<!-- PERSISTENCE end -->
-			
+
 			<!-- GENERAL UTILS begin -->
 			<dependency>
 				<groupId>org.apache.commons</groupId>
@@ -221,24 +212,6 @@
 				<artifactId>commons-fileupload</artifactId>
 				<version>1.3.1</version>
 			</dependency>
-
-			<!-- JSON begin -->
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-core</artifactId>
-				<version>${jackson.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-databind</artifactId>
-				<version>${jackson.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.fasterxml.jackson.module</groupId>
-				<artifactId>jackson-module-jaxb-annotations</artifactId>
-				<version>${jackson.version}</version>
-			</dependency>
-			<!-- JSON end -->
 
 			<!-- JMS begin -->
 			<dependency>
