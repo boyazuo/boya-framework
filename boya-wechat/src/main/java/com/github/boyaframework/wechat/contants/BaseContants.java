@@ -28,4 +28,6 @@ public class BaseContants {
 	 * @Fields ACCESS_TOKEN_MAP : 缓存 js ticket 
 	 */ 
 	public static final Map<String, Long> JSAPI_TICKET_MAP = new HashMap<String, Long>();
+	
+	public static final String MSG_TO_USER_TEMPLATE_ID = "Xjd4ZxA1xeWUphqV0-HfIhTwgoyFT_2xp7354BGFJo0";
 }
