@@ -61,6 +61,8 @@ public class ApiContants {
 			+ "&openid="
 			+ "{{OPENID}}"
 			+ "&lang=zh_CN";
+	public static final String SEND_MSG_API = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token="
+				+"{{ACCESS_TOKEN}}";
 	
 	/** 
 	 * @Title: getAuthorizeUrl 
@@ -182,7 +184,10 @@ public class ApiContants {
 	 */ 
 	public static final String PLACE_AN_ORDER = "https://api.mch.weixin.qq.com/pay/unifiedorder";
 	
-	
+	public static String getSendMsgUrl(String accessToken) {
+		String url = SEND_MSG_API.replace("{{ACCESS_TOKEN}}", accessToken);
+		return url;
+	}
 	
 	public static void main(String[] args) {
 		System.out.println(getUserInfoUrl("OezXcEiiBSKSxW0eoylIeP0i103D4eoEDUkFv75zt1epAnLyR67l-rZnkMhKigVr9AzNPObVz3FU2C_cfCmW1JWf754PIcZSEeYwJcF8MKA53QvAXwhYA0eHbx6u5IDOpLOsto3MV7OZgX8hxdH5FQ", "123"));
