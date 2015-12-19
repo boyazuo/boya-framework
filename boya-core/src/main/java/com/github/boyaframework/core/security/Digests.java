@@ -109,7 +109,7 @@ public class Digests {
 	}
 	
 	public static void main(String[] args) {
-		String password = md5("123456", "dong", 2);
+		String password = md5("aaaaaa1", "123456", 2);
 		System.out.println(password);
 	}
 
