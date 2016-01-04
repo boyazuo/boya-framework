@@ -17,8 +17,8 @@
 		<!-- 主要依赖库的版本定义 -->
 		<boya.version>1.0.0-SNAPSHOT</boya.version>
 		<mybatis.starter.version>1.0.0</mybatis.starter.version>
+		<shiro.starter.version>1.0.0</shiro.starter.version>
 		<activiti.version>5.16</activiti.version>
-		<shiro.version>1.2.3</shiro.version>
 		<quartz.version>2.2.1</quartz.version>
 		<jedis.version>2.7.3</jedis.version>
 		<ehcache.version>2.6.9</ehcache.version>
@@ -73,6 +73,12 @@
 				<groupId>com.github.pagehelper</groupId>
 				<artifactId>pagehelper</artifactId>
 				<version>4.0.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.boyazuo</groupId>
+				<artifactId>shiro-spring-boot-starter</artifactId>
+				<version>${shiro.starter.version}</version>
 			</dependency>
 
 			<!-- jstl -->
@@ -133,29 +139,6 @@
 				<version>${activiti.version}</version>
 			</dependency>
 			<!-- Activiti end -->
-
-			<!-- SECURITY begin -->
-			<dependency>
-				<groupId>org.apache.shiro</groupId>
-				<artifactId>shiro-core</artifactId>
-				<version>${shiro.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.shiro</groupId>
-				<artifactId>shiro-spring</artifactId>
-				<version>${shiro.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.shiro</groupId>
-				<artifactId>shiro-web</artifactId>
-				<version>${shiro.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.shiro</groupId>
-				<artifactId>shiro-ehcache</artifactId>
-				<version>${shiro.version}</version>
-			</dependency>
-			<!-- SECURITY end -->
 
 			<!-- optional datasource pool -->
 			<dependency>

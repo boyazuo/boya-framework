@@ -107,10 +107,4 @@ public class Digests {
 			throw Exceptions.unchecked(e);
 		}
 	}
-	
-	public static void main(String[] args) {
-		String password = md5("15081890103", "15081890103", 2);
-		System.out.println(password);
-	}
-
 }
