@@ -107,7 +107,6 @@ public class HttpUtils {
 			URL url = new URL(urlStr);
 			URLConnection con = url.openConnection();
 			con.setDoOutput(true);
-			con.setRequestProperty("Pragma:", "no-cache");
 			con.setRequestProperty("Cache-Control", "no-cache");
 			con.setRequestProperty("Content-Type", "text/xml");
 			OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());
