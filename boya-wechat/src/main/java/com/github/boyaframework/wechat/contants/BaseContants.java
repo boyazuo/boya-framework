@@ -29,5 +29,12 @@ public class BaseContants {
 	 */ 
 	public static final Map<String, Long> JSAPI_TICKET_MAP = new HashMap<String, Long>();
 	
+	/**
+	* @Fields MSG_TO_USER_TEMPLATE_ID : 向用户发送信息模板ID
+	*/ 
 	public static final String MSG_TO_USER_TEMPLATE_ID = "Xjd4ZxA1xeWUphqV0-HfIhTwgoyFT_2xp7354BGFJo0";
+	/**
+	* @Fields MSG_TO_DEALER_TEMPLATE_ID : 向商户发送信息模板ID
+	*/ 
+	public static final String MSG_TO_DEALER_TEMPLATE_ID = "sFEJSg4zdRs0sCUq07OsbCmcqPnqUHzD2fxT-QSqLFw";
 }
