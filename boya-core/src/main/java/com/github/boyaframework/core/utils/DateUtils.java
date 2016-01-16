@@ -501,7 +501,25 @@ public class DateUtils {
      * @return
      */
     public static Date getCurrentDayStartTime(){
-        Calendar c = Calendar.getInstance();
+    	return getDayBeginTimeByDate(new Date());
+    }
+    /**
+     * 获取当天的结束时间
+     * @return
+     */
+    public static Date getCurrentDayEndTime(){
+        return getDayEndTimeByDate(new Date());
+    }
+    /**
+     * 获取某天的开始时间
+     * @param date
+     * @return
+     * @author:	haidong
+     * @date: 2016年1月16日 上午10:24:09 
+     */
+    public static Date getDayBeginTimeByDate(Date date){
+    	Calendar c = Calendar.getInstance();
+    	c.setTime(date);
         Date now = null;
         try {
             now = parse(format(c.getTime(), SHORT_PATTERN) + " 00:00:00");
@@ -510,12 +528,16 @@ public class DateUtils {
         }
         return now;
     }
-    /**
-     * 获取当天的结束时间
-     * @return
-     */
-    public static Date getCurrentDayEndTime(){
-        Calendar c = Calendar.getInstance();
+	/**
+	 * 获取某天的结束时间
+	 * @param date
+	 * @return
+	 * @author:	haidong
+	 * @date: 2016年1月16日 上午10:24:18 
+	 */
+	public static Date getDayEndTimeByDate(Date date){
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
         Date now = null;
         try {
             now = parse(format(c.getTime(), SHORT_PATTERN) + " 23:59:59");
@@ -523,7 +545,7 @@ public class DateUtils {
             e.printStackTrace();
         }
         return now;
-    }
+	}
     /**
      * 计算两个时间段之间的天数
      * @param date 时间1
