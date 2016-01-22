@@ -17,7 +17,7 @@
 		<!-- 主要依赖库的版本定义 -->
 		<boya.version>1.0.0-SNAPSHOT</boya.version>
 		<mybatis.starter.version>1.0.0</mybatis.starter.version>
-		<shiro.starter.version>1.0.2</shiro.starter.version>
+		<shiro.starter.version>1.0.1</shiro.starter.version>
 		<activiti.version>5.16</activiti.version>
 		<quartz.version>2.2.1</quartz.version>
 		<jedis.version>2.7.3</jedis.version>
