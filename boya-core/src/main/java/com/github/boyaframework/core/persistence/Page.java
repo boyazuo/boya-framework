@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 
 /**
@@ -29,6 +31,8 @@ public class Page<T> implements Iterable<T> {
 	protected List<T> result = null;
 	/** 总记录数, 默认值为-1 */
 	protected long totalCount = -1;
+	
+	protected String jsonResult;
 
 	public Page() {
 	}
@@ -329,5 +333,11 @@ public class Page<T> implements Iterable<T> {
 		public String getDir() {
 			return dir;
 		}
+		
+	}
+	
+	public String getJsonResult() throws JsonProcessingException{
+		ObjectMapper om = new ObjectMapper();
+		return om.writeValueAsString(getResult());
 	}
 }
