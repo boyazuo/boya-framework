@@ -130,6 +130,20 @@ public class DateUtils {
 	 */
 	public static int daysBetween(Date smdate, Date bdate)
 			throws ParseException {
+		return daysBetween(smdate, bdate, true);
+	}
+	/**
+	 * 计算两个日期之间相差的天数
+	 * @param smdate 较小的时间
+	 * @param bdate 较大的时间
+	 * @param includeTody 是否包含今天
+	 * @return
+	 * @throws ParseException
+	 * @author:	haidong
+	 * @date: 2016年1月23日 下午7:04:24
+	 */
+	public static int daysBetween(Date smdate, Date bdate,boolean includeTody)
+			throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		smdate = sdf.parse(sdf.format(smdate));
 		bdate = sdf.parse(sdf.format(bdate));
@@ -139,7 +153,9 @@ public class DateUtils {
 		cal.setTime(bdate);
 		long time2 = cal.getTimeInMillis();
 		long between_days = (time2 - time1) / (1000 * 3600 * 24);
-		between_days++;
+		if(includeTody){
+			between_days++;
+		}
 		return Integer.parseInt(String.valueOf(between_days));
 	}
 	
@@ -703,11 +719,7 @@ public class DateUtils {
 
 	
 	public static void main(String[] args) throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat(DEFAULT_PATTERN);
+		System.out.println(DateUtils.daysBetween(DateUtils.parse("2016-02-13","yyyy-MM-dd"), DateUtils.parse("2016-02-23","yyyy-MM-dd")));
 		
-		Map<String, Date> datas = getCurrentWeekScope();
-		for(String key : datas.keySet()) {
-			System.out.println(sdf.format(datas.get(key)));
-		}
 	}
 }
