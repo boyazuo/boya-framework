@@ -52,7 +52,7 @@ public class HttpUtils {
 		try (CloseableHttpResponse response = client.execute(request);) {
 			HttpEntity entity = response.getEntity();
 			if (entity != null) {
-				responseText = EntityUtils.toString(entity);
+				responseText = EntityUtils.toString(entity, ENCODING);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -184,8 +184,4 @@ public class HttpUtils {
 		}
 		return "error"; // 自定义错误信息
 	}
-
-	public static void main(String[] args) throws JsonProcessingException {
-	}
-
 }
