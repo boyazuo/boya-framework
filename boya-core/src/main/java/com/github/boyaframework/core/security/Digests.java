@@ -107,4 +107,7 @@ public class Digests {
 			throw Exceptions.unchecked(e);
 		}
 	}
+	public static void main(String[] args) {
+		System.out.println(Digests.md5("123456", "18688888884", Digests.HASH_INTERATIONS));
+	}
 }

@@ -534,6 +534,9 @@ public class DateUtils {
      * @date: 2016年1月16日 上午10:24:09 
      */
     public static Date getDayBeginTimeByDate(Date date){
+    	if (date == null) {
+    		return null;
+    	}
     	Calendar c = Calendar.getInstance();
     	c.setTime(date);
         Date now = null;
@@ -552,6 +555,9 @@ public class DateUtils {
 	 * @date: 2016年1月16日 上午10:24:18 
 	 */
 	public static Date getDayEndTimeByDate(Date date){
+		if (date == null) {
+    		return null;
+    	}
 		Calendar c = Calendar.getInstance();
 		c.setTime(date);
         Date now = null;
