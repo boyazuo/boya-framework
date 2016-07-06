@@ -1,12 +1,14 @@
 package com.github.boyaframework.core.persistence;
 
+import java.io.Serializable;
+
 /**
  * 通用实体基类
  * 
  * @author Boya
  *
  */
-public class IdEntity {
+public class IdEntity implements Serializable {
 	private Long id;
 
 	public Long getId() {
