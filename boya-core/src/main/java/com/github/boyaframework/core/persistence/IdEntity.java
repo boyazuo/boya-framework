@@ -8,6 +8,7 @@ import java.io.Serializable;
  * @author Boya
  *
  */
+@SuppressWarnings("serial")
 public class IdEntity implements Serializable {
 	private Long id;
 
