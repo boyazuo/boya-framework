@@ -21,7 +21,7 @@ public class PageInterceptor {
 		Page<?> page = null;
 		Object[] args =  pjp.getArgs();
 		boolean pageable = true;
-		int pageSize = 0;
+		int pageSize = 10;
 		for (Object arg : args) {
 			if (arg instanceof Page) {
 				Method method = ((MethodSignature)pjp.getSignature()).getMethod();
