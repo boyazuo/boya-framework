@@ -21,6 +21,7 @@ public class PageInterceptor {
 		Page<?> page = null;
 		Object[] args =  pjp.getArgs();
 		boolean pageable = true;
+		int pageSize = 0;
 		for (Object arg : args) {
 			if (arg instanceof Page) {
 				Method method = ((MethodSignature)pjp.getSignature()).getMethod();
@@ -31,11 +32,14 @@ public class PageInterceptor {
 						if(a instanceof PageConfig) {
 							PageConfig pageConfig = (PageConfig) a;
 							pageable = pageConfig.pageable();
+							pageSize = pageConfig.pageSize();
 						}
 					}
 				}
-				if (pageable)
+				if (pageable) {
 					page = (Page<?>)arg;
+					page.setPageNo(pageSize);
+				}
 				break;
 			}
 		}

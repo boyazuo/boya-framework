@@ -17,4 +17,9 @@ public @interface PageConfig {
 	 * @throws 
 	 */
 	boolean pageable() default true;
+	
+	/**
+	 * @return
+	 */
+	int pageSize() default 10;
 }
