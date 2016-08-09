@@ -38,7 +38,7 @@ public class PageInterceptor {
 				}
 				if (pageable) {
 					page = (Page<?>)arg;
-					page.setPageNo(pageSize);
+					page.setPageSize(pageSize);
 				}
 				break;
 			}
