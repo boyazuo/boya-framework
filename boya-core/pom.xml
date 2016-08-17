@@ -4,8 +4,7 @@
 	<parent>
 		<groupId>com.github.boyaframework</groupId>
 		<artifactId>boya-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../boya-parent/pom.xml</relativePath>
+		<version>0.0.1</version>
 	</parent>
 	<artifactId>boya-core</artifactId>
 	<packaging>jar</packaging>

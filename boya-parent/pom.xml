@@ -8,14 +8,14 @@
 	</parent>
 	<groupId>com.github.boyaframework</groupId>
 	<artifactId>boya-parent</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>pom</packaging>
 
 	<name>Boya Framework Model Parent</name>
 
 	<properties>
 		<!-- 主要依赖库的版本定义 -->
-		<boya.version>1.0.0-SNAPSHOT</boya.version>
+		<boya.version>0.0.1</boya.version>
 		<mybatis.starter.version>1.0.0</mybatis.starter.version>
 		<shiro.starter.version>1.0.2</shiro.starter.version>
 		<activiti.version>5.16</activiti.version>
