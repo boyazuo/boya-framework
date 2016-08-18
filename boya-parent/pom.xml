@@ -2,13 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.3.2.RELEASE</version>
+		<groupId>com.github.boyaframework</groupId>
+		<artifactId>boya-framework</artifactId>
+		<version>0.0.1</version>
 	</parent>
-	<groupId>com.github.boyaframework</groupId>
 	<artifactId>boya-parent</artifactId>
-	<version>0.0.1</version>
 	<packaging>pom</packaging>
 
 	<name>Boya Framework Model Parent</name>
@@ -321,13 +319,6 @@
 				<groupId>joda-time</groupId>
 				<artifactId>joda-time-jsptags</artifactId>
 				<version>1.1.1</version>
-			</dependency>
-
-			<!-- joda for jackson -->
-			<dependency>
-				<groupId>com.fasterxml.jackson.datatype</groupId>
-				<artifactId>jackson-datatype-joda</artifactId>
-				<version>${jackson.version}</version>
 			</dependency>
 			<!-- GENERAL UTILS end -->
 
