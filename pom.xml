@@ -52,7 +52,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	<!-- 
     <issueManagement>
         <system>Github</system>
         <url>https://github.com/boyazuo/boya-framework/issues</url>
@@ -69,7 +69,6 @@
 			<id>release</id>
 			<build>
 				<plugins>
-					<!-- Source -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
@@ -83,7 +82,6 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!-- Javadoc -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -100,7 +98,6 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!-- GPG -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
@@ -128,4 +125,18 @@
 			</distributionManagement>
 		</profile>
 	</profiles>
+	-->
+	
+	<distributionManagement>  
+       	<repository>  
+           	<id>nexus-releases</id>  
+           	<name>Nexus Release Repository</name>  
+           	<url>http://192.168.1.10:8081/nexus/content/repositories/releases</url>  
+       	</repository>  
+       	<snapshotRepository>  
+           	<id>nexus-snapshots</id>  
+           	<name>Nexus Snapshot Repository</name>  
+           	<url>http://192.168.1.10:8081/nexus/content/repositories/snapshots</url>  
+       	</snapshotRepository>  
+   	</distributionManagement>
 </project>
