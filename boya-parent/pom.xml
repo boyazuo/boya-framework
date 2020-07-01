@@ -17,7 +17,7 @@
 		<mybatis.starter.version>1.0.0</mybatis.starter.version>
 		<shiro.starter.version>1.0.2</shiro.starter.version>
 		<activiti.version>5.16</activiti.version>
-		<quartz.version>2.2.1</quartz.version>
+		<quartz.version>2.3.2</quartz.version>
 		<jedis.version>2.7.3</jedis.version>
 		<ehcache.version>2.6.9</ehcache.version>
 		<spymemcached.version>2.11.5</spymemcached.version>
