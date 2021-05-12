@@ -31,7 +31,7 @@
 		<joda-time.version>2.3</joda-time.version>
 		<dozer.version>5.5.1</dozer.version>
 		<nosqlunit.version>0.8.0</nosqlunit.version>
-		<solr.version>4.10.4</solr.version>
+		<solr.version>8.8.2</solr.version>
 
 		<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
 		<jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
