@@ -21,7 +21,7 @@
 		<jedis.version>2.7.3</jedis.version>
 		<ehcache.version>2.6.9</ehcache.version>
 		<spymemcached.version>2.11.5</spymemcached.version>
-		<jolokia.version>1.2.3</jolokia.version>
+		<jolokia.version>1.6.1</jolokia.version>
 		<hystrix.version>1.3.16</hystrix.version>
 		<javasimon.version>3.5.2</javasimon.version>
 		<httpclient.version>4.5.2</httpclient.version>
